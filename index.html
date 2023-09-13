@@ -1,0 +1,81 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my socials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <img src="image.jpg" alt="Image" id="display-image" class="hidden">
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my socials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img class="profile-picture" src="nor4.jpg" alt="Profile Picture">
+            <h1>Plug Drxppy</h1>
+            <p>Support</p>
+            <h2>Retired Support For FMod</h2>
+        </header>
+        <body>
+            
+            <a href="https://github.com/plugdrxppy/" target="_blank">
+                <img class="glowing-image" src="photo2.jpg" alt="Photo 2">
+            </a>
+        </body>
+    </div>
+    <div id="overlay" class="overlay">
+        <div id="overlay-content" class="overlay-content">
+            <p>CLICK TO PROCEED</p>
+        </div>
+    </div>
+    <audio id="audio-player">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+    <footer>
+        <p>&copy; website by Plug Drxppy</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlay = document.getElementById("overlay");
+            const overlayContent = document.getElementById("overlay-content");
+            const audioPlayer = document.getElementById("audio-player");
+        
+
+            overlay.style.opacity = 1;
+            overlayContent.style.opacity = 1;
+        
+
+            overlay.addEventListener("click", function () {
+                // Fade out the overlay
+                overlay.style.opacity = 0;
+                overlayContent.style.opacity = 0;
+                
+                setTimeout(() => {
+                    overlay.remove(); 
+                    audioPlayer.play();
+                }, 500); 
+            });
+        });
+
+        window.addEventListener("load", () => {
+            const contentElements = document.querySelectorAll(".container, .play-button-container, footer");
+            contentElements.forEach(element => {
+                element.classList.add("fade-in");
+            });
+        });
+    </script>
+</body>
+</html>
